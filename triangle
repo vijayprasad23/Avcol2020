@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Triangle
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Variablle Declaration
+            double lengthA, lengthB, lengthC;
+            
+            //Introduction to the user...
+            Console.WriteLine("This program will determine whether a triangle is Scalene, Isoceles, Right Angled or Equilateral..\n\n");
+
+            Console.WriteLine("Enter the length of side A: ");
+            lengthA = Convert.ToDouble(Console.ReadLine());
+            while (lengthA <= 0) //input validation 
+            {
+                Console.WriteLine("The length of the side cannot be 0 or negative \nPlease enter a positive value : ");
+                lengthA = Convert.ToDouble(Console.ReadLine());
+            }
+            Console.WriteLine("Enter the length of side B: ");
+            lengthB = Convert.ToDouble(Console.ReadLine());
+            while (lengthB <= 0) //input validation 
+            {
+                Console.WriteLine("The length of the side cannot be 0 or negative \nPlease enter a positive value : ");
+                lengthB = Convert.ToDouble(Console.ReadLine());
+            }
+            Console.WriteLine("Enter the length of side C: ");
+            lengthC = Convert.ToDouble(Console.ReadLine());
+            while (lengthC <= 0) //input validation 
+            {
+                Console.WriteLine("The length of the side cannot be 0 or negative \nPlease enter a positive value : ");
+                lengthC = Convert.ToDouble(Console.ReadLine());
+            }
+
+            if (lengthA == lengthB && lengthA == lengthC) 
+            {
+                Console.WriteLine("\nThis is an Equilateral Triangle....\n\n ");
+            }
+            else if (lengthA == lengthB || lengthA == lengthC)
+            {
+                Console.WriteLine("\nThis is an Isoceles Triangle....\n\n ");
+            }
+            else if ((Math.Pow(lengthA, 2) == Math.Pow(lengthB, 2) + Math.Pow(lengthC, 2)) || (Math.Pow(lengthB, 2) == Math.Pow(lengthA, 2) + Math.Pow(lengthC, 2)) || (Math.Pow(lengthC, 2) == Math.Pow(lengthB, 2) + Math.Pow(lengthA, 2)))
+            {
+                Console.WriteLine("\nThis is a Right Angled Triangle....\n\n ");
+            }
+            else if (lengthA != lengthB && lengthA != lengthC)
+            {
+                Console.WriteLine("\nThis is a Scalene Triangle....\n\n ");
+            }
+            else
+            {
+                Console.WriteLine("\nOne of the length you entered is invalid....\n\n ");
+            }
+            Console.ReadLine();
+        }
+    }
+}
