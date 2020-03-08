@@ -10,6 +10,10 @@ namespace Triangle
     {
         static void Main(string[] args)
         {
+            string restart = ""; \\For restarting the software
+            
+            do
+            {
             //Variablle Declaration
             double lengthA, lengthB, lengthC;
             
@@ -59,6 +63,13 @@ namespace Triangle
                 Console.WriteLine("\nOne of the length you entered is invalid....\n\n ");
             }
             Console.ReadLine();
+            
+                //Restart Command
+                Console.WriteLine("Please type \"Restart\" if you would like to measure another triangle");
+                restart = Console.ReadLine();
+                Console.Clear();
+                
+            } while (restart == "Restart");
         }
     }
 }
